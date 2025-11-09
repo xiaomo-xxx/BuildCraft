@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-25T21:09:19.403794757	Recipes
+// 1.21.1	2025-11-09T10:36:54.389360528	Recipes
 88cc2edfe29d3f0478fd055713bba10b3c2a8672 data/buildcraft/advancement/recipes/decorations/crate.json
 0f51aae86513bdbfee33c12878fa6076139a36e7 data/buildcraft/advancement/recipes/decorations/tank.json
 668ec437fe36f6f959e44cb481c3f406051b2b45 data/buildcraft/advancement/recipes/misc/combustion_engine.json
@@ -8,6 +8,7 @@ c6813a16db86ce1eeb67f3e5979acad8ef262e26 data/buildcraft/advancement/recipes/mis
 5e46d44596882f1a9394e760f343065639aa423b data/buildcraft/advancement/recipes/misc/redstone_engine.json
 d47ccf76f19a04b320683fe858c099ebbefe4ce1 data/buildcraft/advancement/recipes/misc/stirling_engine.json
 3f1415407aab48073bc431907c7fb48cbd33c7f5 data/buildcraft/advancement/recipes/misc/stone_gear.json
+63c3753874a388efcc8b60f676dcd0ec7ae61291 data/buildcraft/advancement/recipes/misc/tank_reset.json
 725cf6d4e67d3acc35c442621e3ce2de27bffa0b data/buildcraft/advancement/recipes/misc/wooden_gear.json
 ce088b172986441de4a99e61ccc71d1f4a7c1b43 data/buildcraft/advancement/recipes/tools/wrench.json
 c091d0b2c3b313c9ada5b325ce3f97d11cd60dcd data/buildcraft/recipe/combustion_engine.json
@@ -19,5 +20,6 @@ b89f27c3d60eeaeedcb457756226e30dddb568f5 data/buildcraft/recipe/iron_gear.json
 a05699dd845d55390e0999f311094da2ba20eb7e data/buildcraft/recipe/stirling_engine.json
 94e908affef55a8b77920cb68529ca9639a891bb data/buildcraft/recipe/stone_gear.json
 637c59c2773a239f0b38f1802f0b55c0b03f5669 data/buildcraft/recipe/tank.json
+43adcb995c3df76ed9e017ca2c027150db25b87b data/buildcraft/recipe/tank_reset.json
 d6142b4fa14d26995585ed3d8f576b4de20107d2 data/buildcraft/recipe/wooden_gear.json
 89e9c9a81681a7f72dcaa223cc43b3e33bfbcd30 data/buildcraft/recipe/wrench.json

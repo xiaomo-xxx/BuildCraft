@@ -13,8 +13,9 @@ public class RedstoneEngineBE extends EngineBlockEntity {
     }
 
     @Override
-    public void commonTick() {
-        super.commonTick();
+    public void tick() {
+        super.tick();
+
         if (isActive() && level.getGameTime() % 10 == 0) {
             getEnergyStorage().receiveEnergy(getEnergyProduction(), false);
         }

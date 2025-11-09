@@ -1,5 +1,6 @@
 package com.thepigcat.buildcraft.datagen.data;
 
+import com.thepigcat.buildcraft.BuildcraftLegacy;
 import com.thepigcat.buildcraft.registries.BCBlocks;
 import com.thepigcat.buildcraft.registries.BCItems;
 import com.thepigcat.buildcraft.tags.BCTags;
@@ -67,7 +68,7 @@ public class BCRecipeProvider extends net.minecraft.data.recipes.RecipeProvider 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BCBlocks.TANK)
                 .requires(BCBlocks.TANK)
                 .unlockedBy("has_tank", has(BCBlocks.TANK))
-                .save(recipeOutput);
+                .save(recipeOutput, BuildcraftLegacy.rl("tank_reset"));
     }
 
     public static Criterion<InventoryChangeTrigger.TriggerInstance> has(TagKey<Item> tag) {

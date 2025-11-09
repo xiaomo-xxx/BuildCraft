@@ -22,7 +22,7 @@ public class CrateBE extends BlockEntity {
 
     public CrateBE(BlockPos pos, BlockState blockState) {
         super(BCBlockEntities.CRATE.get(), pos, blockState);
-        this.itemHandler = new JumboItemHandler(BCConfig.crateItems) {
+        this.itemHandler = new JumboItemHandler(BCConfig.crateItemCapacity) {
             @Override
             public boolean isItemValid(int slot, ItemStack stack) {
                 ItemStack stackInSlot = getStackInSlot(slot);

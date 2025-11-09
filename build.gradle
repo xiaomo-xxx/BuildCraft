@@ -26,6 +26,7 @@ repositories {
         name = "Jared's maven"
         url = "https://maven.blamejared.com/"
     }
+    maven { url 'https://jitpack.io' }
     mavenLocal()
 }
 
@@ -95,7 +96,7 @@ dependencies {
 
     runtimeOnly "mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}"
 
-    implementation "curse.maven:porting-dead-libs-1173919:${pdl_version}"
+    implementation "com.github.Porting-Dead-Mods:Porting-Dead-Libs:${pdl_version}"
 }
 
 var generateModMetadata = tasks.register("generateModMetadata", ProcessResources) {

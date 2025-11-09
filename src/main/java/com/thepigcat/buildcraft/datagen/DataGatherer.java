@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = BuildcraftLegacy.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = BuildcraftLegacy.MODID)
 public class DataGatherer {
     @SubscribeEvent
     public static void onGatherData(GatherDataEvent event) {

@@ -3,7 +3,7 @@ package com.thepigcat.buildcraft.client.screens;
 import com.portingdeadmods.portingdeadlibs.api.blockentities.ContainerBlockEntity;
 import com.portingdeadmods.portingdeadlibs.api.client.screens.PDLAbstractContainerScreen;
 import com.portingdeadmods.portingdeadlibs.api.gui.utils.FluidTankRenderer;
-import com.portingdeadmods.portingdeadlibs.impl.client.screens.widgets.FluidTankWidget;
+import com.portingdeadmods.portingdeadlibs.client.screens.widgets.FluidTankWidget;
 import com.thepigcat.buildcraft.BuildcraftLegacy;
 import com.thepigcat.buildcraft.client.screens.widgets.LazyImageButton;
 import com.thepigcat.buildcraft.client.screens.widgets.RedstoneWidget;

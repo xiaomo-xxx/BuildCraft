@@ -2,6 +2,7 @@ package com.thepigcat.buildcraft.api.blockentities;
 
 import com.portingdeadmods.portingdeadlibs.api.blockentities.ContainerBlockEntity;
 import com.portingdeadmods.portingdeadlibs.api.utils.IOAction;
+import com.portingdeadmods.portingdeadlibs.utils.capabilities.HandlerUtils;
 import com.thepigcat.buildcraft.BuildcraftLegacy;
 import com.thepigcat.buildcraft.api.blocks.EngineBlock;
 import it.unimi.dsi.fastutil.Pair;
@@ -38,7 +39,9 @@ public abstract class EngineBlockEntity extends ContainerBlockEntity implements 
 
     public EngineBlockEntity(BlockEntityType<?> blockEntityType, BlockPos blockPos, BlockState blockState) {
         super(blockEntityType, blockPos, blockState);
-        addEnergyStorage(getEnergyCapacity());
+        addEnergyStorage(HandlerUtils::newEnergystorage, builder -> builder
+                .capacity(this.getEnergyCapacity())
+                .maxTransfer(this.getEnergyProduction()));
         this.movement = 0.5f;
         this.sidedInteractions = new HashMap<>();
         Direction facing = getBlockState().getValue(EngineBlock.FACING);
@@ -80,8 +83,9 @@ public abstract class EngineBlockEntity extends ContainerBlockEntity implements 
     }
 
     @Override
-    public void commonTick() {
-        super.commonTick();
+    public void tick() {
+        super.tick();
+
         lastMovement = movement;
         if (isActive()) {
             if (!backward) {
@@ -127,15 +131,6 @@ public abstract class EngineBlockEntity extends ContainerBlockEntity implements 
 
     public boolean isActive() {
         return active;
-    }
-
-    @Override
-    public <T> Map<Direction, Pair<IOAction, int[]>> getSidedInteractions(BlockCapability<T, @Nullable Direction> capability) {
-        Direction facing = getBlockState().getValue(EngineBlock.FACING);
-        if (capability == Capabilities.EnergyStorage.BLOCK) {
-            return Map.of(facing, Pair.of(IOAction.EXTRACT, new int[0]));
-        }
-        return sidedInteractions;
     }
 
     @Override

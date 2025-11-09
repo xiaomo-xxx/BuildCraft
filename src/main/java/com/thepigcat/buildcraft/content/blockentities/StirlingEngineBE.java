@@ -1,5 +1,6 @@
 package com.thepigcat.buildcraft.content.blockentities;
 
+import com.portingdeadmods.portingdeadlibs.utils.capabilities.HandlerUtils;
 import com.thepigcat.buildcraft.BCConfig;
 import com.thepigcat.buildcraft.api.blockentities.EngineBlockEntity;
 import com.thepigcat.buildcraft.content.menus.StirlingEngineMenu;
@@ -28,7 +29,10 @@ public class StirlingEngineBE extends EngineBlockEntity implements MenuProvider 
 
     public StirlingEngineBE(BlockPos blockPos, BlockState blockState) {
         super(BCBlockEntities.STIRLING_ENGINE.get(), blockPos, blockState);
-        addItemHandler(1, (slot, item) -> item.getBurnTime(RecipeType.SMELTING) > 0);
+        addItemHandler(HandlerUtils::newItemStackHandler,builder -> builder
+                .onChange(this::onItemsChanged)
+                .slots(1)
+                .validator((slot, item) -> item.getBurnTime(RecipeType.SMELTING) > 0));
     }
 
     public int getBurnTime() {
@@ -49,7 +53,6 @@ public class StirlingEngineBE extends EngineBlockEntity implements MenuProvider 
         return BCConfig.stirlingEngineEnergyProduction;
     }
 
-    @Override
     public void onItemsChanged(int slot) {
         IItemHandler itemHandler = getItemHandler();
         if (itemHandler != null) {
@@ -69,8 +72,8 @@ public class StirlingEngineBE extends EngineBlockEntity implements MenuProvider 
     }
 
     @Override
-    public void commonTick() {
-        super.commonTick();
+    public void tick() {
+        super.tick();
 
         if (this.getRedstoneSignalType().isActive(this.getRedstoneSignalStrength())) {
             IItemHandler itemHandler = getItemHandler();

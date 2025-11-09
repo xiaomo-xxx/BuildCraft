@@ -1,5 +1,6 @@
 package com.thepigcat.buildcraft.content.blockentities;
 
+import com.portingdeadmods.portingdeadlibs.utils.capabilities.HandlerUtils;
 import com.thepigcat.buildcraft.BCConfig;
 import com.thepigcat.buildcraft.api.blockentities.EngineBlockEntity;
 import com.thepigcat.buildcraft.content.menus.CombustionEngineMenu;
@@ -25,12 +26,14 @@ public class CombustionEngineBE extends EngineBlockEntity implements MenuProvide
 
     public CombustionEngineBE(BlockPos blockPos, BlockState blockState) {
         super(BCBlockEntities.COMBUSTION_ENGINE.get(), blockPos, blockState);
-        addFluidTank(BCConfig.combustionEngineFluidCapacity, fluidStack -> fluidStack.is(BCTags.Fluids.COMBUSTION_FUEL));
+        addFluidHandler(HandlerUtils::newFluidTank, builder -> builder
+                .slotLimit($ -> BCConfig.combustionEngineFluidCapacity)
+                .validator((tank, fluid) -> fluid.is(BCTags.Fluids.COMBUSTION_FUEL)));
     }
 
     @Override
-    public void commonTick() {
-        super.commonTick();
+    public void tick() {
+        super.tick();
         if (getRedstoneSignalType().isActive(this.getRedstoneSignalStrength())) {
             IFluidHandler fluidHandler = getFluidHandler();
             if (!fluidHandler.getFluidInTank(0).isEmpty()) {

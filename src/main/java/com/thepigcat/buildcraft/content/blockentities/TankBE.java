@@ -4,6 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.portingdeadmods.portingdeadlibs.api.blockentities.ContainerBlockEntity;
 import com.portingdeadmods.portingdeadlibs.api.capabilities.DynamicFluidTank;
 import com.portingdeadmods.portingdeadlibs.api.utils.IOAction;
+import com.portingdeadmods.portingdeadlibs.utils.capabilities.HandlerUtils;
 import com.portingdeadmods.portingdeadlibs.utils.capabilities.SidedCapUtils;
 import com.thepigcat.buildcraft.BCConfig;
 import com.thepigcat.buildcraft.data.BCDataComponents;
@@ -46,16 +47,17 @@ public class TankBE extends ContainerBlockEntity {
 
     public TankBE(BlockPos pos, BlockState blockState) {
         super(BCBlockEntities.TANK.get(), pos, blockState);
-        addFluidTank(0);
+        addFluidHandler(HandlerUtils::newDynamicFluidTank, builder -> builder
+                .onChange($ -> this.updateData())
+                .slotLimit($ -> BCConfig.tankCapacity));
     }
 
     public FluidStack getFluid() {
         return getFluidHandler().getFluidInTank(0);
     }
 
-    @Override
     public DynamicFluidTank getFluidTank() {
-        return super.getFluidTank();
+        return ((DynamicFluidTank) super.getFluidHandler());
     }
 
     @Override
@@ -78,7 +80,7 @@ public class TankBE extends ContainerBlockEntity {
 
     public void setBottomTankPos(BlockPos bottomTankPos) {
         this.bottomTankPos = bottomTankPos;
-        update();
+        this.updateData();
     }
 
     public void initTank(int tanks) {
@@ -87,16 +89,11 @@ public class TankBE extends ContainerBlockEntity {
             this.getFluidTank().setFluid(this.initialFluid);
             this.initialFluid = null;
         }
-        update();
+        this.updateData();
     }
 
     public BlockPos getBottomTankPos() {
         return bottomTankPos;
-    }
-
-    @Override
-    public <T> Map<Direction, Pair<IOAction, int[]>> getSidedInteractions(BlockCapability<T, @Nullable Direction> blockCapability) {
-        return allBoth(0);
     }
 
     @Override
@@ -134,10 +131,6 @@ public class TankBE extends ContainerBlockEntity {
 
     public boolean isBottomJoined() {
         return bottomJoined;
-    }
-
-    public static ImmutableMap<Direction, Pair<IOAction, int[]>> allBoth(int... slots) {
-        return ImmutableMap.of(Direction.NORTH, Pair.of(IOAction.BOTH, slots), Direction.EAST, Pair.of(IOAction.BOTH, slots), Direction.SOUTH, Pair.of(IOAction.BOTH, slots), Direction.WEST, Pair.of(IOAction.BOTH, slots), Direction.UP, Pair.of(IOAction.BOTH, slots), Direction.DOWN, Pair.of(IOAction.BOTH, slots));
     }
 
 }
