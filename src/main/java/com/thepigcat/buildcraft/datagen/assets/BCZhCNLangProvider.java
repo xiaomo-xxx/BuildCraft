@@ -17,7 +17,6 @@ public class BCZhCNLangProvider extends LanguageProvider {
         add("item.buildcraft.stone_gear", "石质齿轮");
         add("item.buildcraft.iron_gear", "铁质齿轮");
         add("item.buildcraft.gold_gear", "金质齿轮");
-        add("item.buildcraft.diamond_gear", "钻石齿轮");
         add("item.buildcraft.oil_bucket", "石油桶");
 
         // 方块（BlockItem使用 block. 前缀）

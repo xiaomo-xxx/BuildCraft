@@ -3,7 +3,6 @@
     "buildcraft:wooden_gear",
     "buildcraft:stone_gear",
     "buildcraft:iron_gear",
-    "buildcraft:gold_gear",
-    "buildcraft:diamond_gear"
+    "buildcraft:gold_gear"
   ]
 }

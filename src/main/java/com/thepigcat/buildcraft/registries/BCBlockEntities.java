@@ -4,6 +4,7 @@ import com.thepigcat.buildcraft.BuildcraftLegacy;
 import com.thepigcat.buildcraft.content.blockentities.*;
 import com.thepigcat.buildcraft.content.blocks.ExtractingItemPipeBlock;
 import com.thepigcat.buildcraft.content.blocks.ItemPipeBlock;
+import com.thepigcat.buildcraft.content.blocks.DiamondItemPipeBlock;
 import com.thepigcat.buildcraft.content.blocks.VoidItemPipeBlock;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
@@ -24,6 +25,9 @@ public final class BCBlockEntities {
     public static final Supplier<BlockEntityType<VoidItemPipeBE>> VOID_ITEM_PIPE = BLOCK_ENTITIES.register("void_item_pipe",
             () -> BlockEntityType.Builder.of(VoidItemPipeBE::new, collectBlocks(VoidItemPipeBlock.class)).build(null));
 
+    public static final Supplier<BlockEntityType<DiamondItemPipeBE>> DIAMOND_ITEM_PIPE = BLOCK_ENTITIES.register("diamond_item_pipe",
+            () -> BlockEntityType.Builder.of(DiamondItemPipeBE::new, collectDiamondPipeBlocks()).build(null));
+
     public static final Supplier<BlockEntityType<TankBE>> TANK = BLOCK_ENTITIES.register("tank",
             () -> BlockEntityType.Builder.of(TankBE::new, BCBlocks.TANK.get()).build(null));
     public static final Supplier<BlockEntityType<CrateBE>> CRATE = BLOCK_ENTITIES.register("crate",
@@ -38,5 +42,9 @@ public final class BCBlockEntities {
 
     private static Block[] collectBlocks(Class<? extends Block> clazz) {
         return BuiltInRegistries.BLOCK.stream().filter(clazz::isInstance).toList().toArray(Block[]::new);
+    }
+
+    private static Block[] collectDiamondPipeBlocks() {
+        return BuiltInRegistries.BLOCK.stream().filter(b -> b instanceof DiamondItemPipeBlock).toList().toArray(Block[]::new);
     }
 }

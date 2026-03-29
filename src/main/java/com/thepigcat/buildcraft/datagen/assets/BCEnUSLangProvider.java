@@ -1,7 +1,5 @@
 package com.thepigcat.buildcraft.datagen.assets;
 
-import com.portingdeadmods.portingdeadlibs.api.config.PDLConfigHelper;
-import com.thepigcat.buildcraft.BCConfig;
 import com.thepigcat.buildcraft.BuildcraftLegacy;
 import com.thepigcat.buildcraft.api.blockentities.RedstoneBlockEntity;
 import com.thepigcat.buildcraft.registries.BCBlocks;
@@ -22,14 +20,11 @@ public class BCEnUSLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        PDLConfigHelper.generateConfigNames(BCConfig.class, BuildcraftLegacy.MODID, this::add);
-
         addItem(BCItems.WRENCH, "Wrench");
         addItem(BCItems.WOODEN_GEAR, "Wooden Gear");
         addItem(BCItems.STONE_GEAR, "Stone Gear");
         addItem(BCItems.IRON_GEAR, "Iron Gear");
         addItem(BCItems.GOLD_GEAR, "Gold Gear");
-        addItem(BCItems.DIAMOND_GEAR, "Diamond Gear");
         addItem(BCFluids.OIL.getDeferredBucket(), "Oil Bucket");
 
         addBlock(BCBlocks.CRATE, "Crate");

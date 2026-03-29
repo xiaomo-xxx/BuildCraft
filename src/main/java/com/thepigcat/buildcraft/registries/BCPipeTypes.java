@@ -2,6 +2,7 @@ package com.thepigcat.buildcraft.registries;
 
 import com.thepigcat.buildcraft.BuildcraftLegacy;
 import com.thepigcat.buildcraft.api.pipes.PipeTypeHolder;
+import com.thepigcat.buildcraft.content.blocks.DiamondItemPipeBlock;
 import com.thepigcat.buildcraft.content.blocks.ExtractingItemPipeBlock;
 import com.thepigcat.buildcraft.content.blocks.ItemPipeBlock;
 import com.thepigcat.buildcraft.content.blocks.VoidItemPipeBlock;
@@ -21,6 +22,10 @@ public final class BCPipeTypes {
     public static final PipeTypeHolder<VoidItemPipeBlock, ItemPipeBlockItem> VOID = HELPER.registerPipeType("void", VoidItemPipeBlock::new, ItemPipeBlockItem::new,
             ModelUtils.DEFAULT_BLOCK_MODEL_DEFINITION, ModelUtils.DEFAULT_BLOCK_MODEL_FILE, ModelUtils.DEFAULT_ITEM_MODEL_FILE,
             "base", "connection");
+
+    public static final PipeTypeHolder<DiamondItemPipeBlock, ItemPipeBlockItem> DIAMOND = HELPER.registerPipeType("diamond", DiamondItemPipeBlock::new, ItemPipeBlockItem::new,
+            ModelUtils.EXTRACTING_BLOCK_MODEL_DEFINITION, ModelUtils.DEFAULT_BLOCK_MODEL_FILE, ModelUtils.DEFAULT_ITEM_MODEL_FILE,
+            "base", "connection", "connection_extracting");
 
     public static void init() {
     }

@@ -43,7 +43,6 @@ public class BCRecipeProvider extends net.minecraft.data.recipes.RecipeProvider 
         gearRecipe(recipeOutput, Tags.Items.COBBLESTONES, BCTags.Items.WOODEN_GEAR, BCItems.STONE_GEAR);
         gearRecipe(recipeOutput, Tags.Items.INGOTS_IRON, BCTags.Items.STONE_GEAR, BCItems.IRON_GEAR);
         gearRecipe(recipeOutput, Tags.Items.INGOTS_GOLD, BCTags.Items.IRON_GEAR, BCItems.GOLD_GEAR);
-        gearRecipe(recipeOutput, Tags.Items.GEMS_DIAMOND, BCTags.Items.GOLD_GEAR, BCItems.DIAMOND_GEAR);
 
         // === Pipe Recipes ===
         // Wooden pipe (extracting) - planks + glass

@@ -41,7 +41,7 @@ public final class BCPipes {
     ), Either.right(ResourceLocation.parse("gold_block")), Ingredient.of(Tags.Items.INGOTS_GOLD), List.of(BlockTags.MINEABLE_WITH_PICKAXE), 2);
 
     // Diamond pipes - extracting + filtering
-    public static final PipeHolder DIAMOND = HELPER.registerPipe("diamond", BCPipeTypes.EXTRACTING, "Diamond Pipe", 0.015f, List.of(
+    public static final PipeHolder DIAMOND = HELPER.registerPipe("diamond", BCPipeTypes.DIAMOND, "Diamond Pipe", 0.015f, List.of(
             BuildcraftLegacy.rl("block/diamond_pipe"),
             BuildcraftLegacy.rl("block/diamond_pipe_extracting")
     ), Either.right(ResourceLocation.parse("diamond_block")), Ingredient.of(Tags.Items.GEMS_DIAMOND), List.of(BlockTags.MINEABLE_WITH_PICKAXE), 3);

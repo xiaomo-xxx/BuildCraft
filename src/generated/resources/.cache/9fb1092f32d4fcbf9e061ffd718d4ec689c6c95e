@@ -1,10 +1,9 @@
-// 1.21.1	2026-03-29T05:22:25.126478255	Recipes
+// 1.21.1	2026-03-29T06:12:07.006718213	Recipes
 88cc2edfe29d3f0478fd055713bba10b3c2a8672 data/buildcraft/advancement/recipes/decorations/crate.json
 0f51aae86513bdbfee33c12878fa6076139a36e7 data/buildcraft/advancement/recipes/decorations/tank.json
 1d36734e3d0ebed13094ea6db5e126d3d44b59ba data/buildcraft/advancement/recipes/misc/clay_pipe.json
 184eb22b80abb7b8f6dbb3d0a04f727b7f5d96e5 data/buildcraft/advancement/recipes/misc/cobblestone_pipe.json
 668ec437fe36f6f959e44cb481c3f406051b2b45 data/buildcraft/advancement/recipes/misc/combustion_engine.json
-9cb8863afc5322b7475aeab8d63a85792f4c870a data/buildcraft/advancement/recipes/misc/diamond_gear.json
 d44606f86657e587497e6cee2ca32cd070b6e67e data/buildcraft/advancement/recipes/misc/diamond_pipe.json
 c6813a16db86ce1eeb67f3e5979acad8ef262e26 data/buildcraft/advancement/recipes/misc/gold_gear.json
 221fb748e2bbef82bb9097ba53d09b2d638e83e7 data/buildcraft/advancement/recipes/misc/gold_pipe.json
@@ -25,7 +24,6 @@ fc1a6e1c82cb1533338d69f03db82ddee65f1ec8 data/buildcraft/recipe/clay_pipe.json
 d941de91e19301321cb6dd9d0a08df279c47936e data/buildcraft/recipe/cobblestone_pipe.json
 c091d0b2c3b313c9ada5b325ce3f97d11cd60dcd data/buildcraft/recipe/combustion_engine.json
 6b2c5dad8975e41304a42ff306c515098726056a data/buildcraft/recipe/crate.json
-07707b8d6e79b3edb8b378fb185d0acb6a1eb342 data/buildcraft/recipe/diamond_gear.json
 2da3ebff1e77fbd482ba3f68571e169b09208d73 data/buildcraft/recipe/diamond_pipe.json
 f3f751dbd9213f0c0f5a84e5baeb89bbb8559199 data/buildcraft/recipe/gold_gear.json
 69b0678c791f647e5fbc1a55e60ec2e209c794bb data/buildcraft/recipe/gold_pipe.json

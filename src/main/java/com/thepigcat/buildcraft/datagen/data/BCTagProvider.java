@@ -91,14 +91,12 @@ public class BCTagProvider {
                     BCItems.WOODEN_GEAR.get(),
                     BCItems.STONE_GEAR.get(),
                     BCItems.IRON_GEAR.get(),
-                    BCItems.GOLD_GEAR.get(),
-                    BCItems.DIAMOND_GEAR.get()
+                    BCItems.GOLD_GEAR.get()
             );
             tag(BCTags.Items.WOODEN_GEAR).add(BCItems.WOODEN_GEAR.get());
             tag(BCTags.Items.STONE_GEAR).add(BCItems.STONE_GEAR.get());
             tag(BCTags.Items.IRON_GEAR).add(BCItems.IRON_GEAR.get());
             tag(BCTags.Items.GOLD_GEAR).add(BCItems.GOLD_GEAR.get());
-            tag(BCTags.Items.DIAMOND_GEAR).add(BCItems.DIAMOND_GEAR.get());
         }
     }
 

@@ -21,7 +21,6 @@ public final class BCItems {
     public static final DeferredItem<Item> STONE_GEAR = registerItem("stone_gear", Item::new);
     public static final DeferredItem<Item> IRON_GEAR = registerItem("iron_gear", Item::new);
     public static final DeferredItem<Item> GOLD_GEAR = registerItem("gold_gear", Item::new);
-    public static final DeferredItem<Item> DIAMOND_GEAR = registerItem("diamond_gear", Item::new);
 
     private static <T extends Item> DeferredItem<T> registerItem(String name, Function<Item.Properties, T> itemConstructor) {
         DeferredItem<T> item = ITEMS.registerItem(name, itemConstructor, new Item.Properties());

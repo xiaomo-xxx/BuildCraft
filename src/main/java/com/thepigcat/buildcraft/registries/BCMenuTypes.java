@@ -2,6 +2,7 @@ package com.thepigcat.buildcraft.registries;
 
 import com.thepigcat.buildcraft.BuildcraftLegacy;
 import com.thepigcat.buildcraft.content.menus.CombustionEngineMenu;
+import com.thepigcat.buildcraft.content.menus.DiamondPipeMenu;
 import com.thepigcat.buildcraft.content.menus.StirlingEngineMenu;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.inventory.AbstractContainerMenu;
@@ -20,6 +21,9 @@ public final class BCMenuTypes {
             registerMenuType("stirling_engine", StirlingEngineMenu::new);
     public static final Supplier<MenuType<CombustionEngineMenu>> COMBUSTION_ENGINE =
             registerMenuType("combustion_engine", CombustionEngineMenu::new);
+
+    public static final Supplier<MenuType<DiamondPipeMenu>> DIAMOND_PIPE =
+            registerMenuType("diamond_pipe", DiamondPipeMenu::new);
 
     private static <T extends AbstractContainerMenu> Supplier<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
         return MENUS.register(name, () -> IMenuTypeExtension.create(factory));
